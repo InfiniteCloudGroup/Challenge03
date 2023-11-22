@@ -14,7 +14,8 @@ If you know even a little about coding, here is a fun challenge.
 
 a) Use variables when possible
 b) Build your own 00-Auth  |  01-VPC  |  02-Subnets files FROM SCRATCH. No git, no peeking at previous projects. 
-c) Using a count loop
+d) Name and number things just like Theo has been showing us
+d) Using a count loop
       Build 3 public subnets, each in a different AZ
       Build 3 private subnets in those AZ's as well
       Deploy an EC2 in each public as well
