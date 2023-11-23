@@ -2,7 +2,7 @@
 resource "aws_subnet" "my_public_subnets" {
   count             = length(var.availability_zones)
   vpc_id            = aws_vpc.icg-app.id
-  cidr_block        = cidrsubnet(aws_vpc.icg-app.cidr_block, 8, count.index + 1) 
+  cidr_block        = cidrsubnet(aws_vpc.icg-app.cidr_block, 8, count.index + 1)  #Remo's the man!
   availability_zone = var.availability_zones[count.index]
 
   tags = {
@@ -14,7 +14,7 @@ resource "aws_subnet" "my_public_subnets" {
 resource "aws_subnet" "my_private_subnets" {
   count             = length(var.availability_zones)
   vpc_id            = aws_vpc.icg-app.id
-  cidr_block        = cidrsubnet(aws_vpc.icg-app.cidr_block, 8, count.index + 11)  
+  cidr_block        = cidrsubnet(aws_vpc.icg-app.cidr_block, 8, count.index + 11) #Remos the man!
   availability_zone = var.availability_zones[count.index]
 
   tags = {
