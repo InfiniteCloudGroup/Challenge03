@@ -1,6 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/terraform,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=terraform,visualstudiocode
-
+.terraform.lock.hcl
 ### Terraform ###
 # Local .terraform directories
 **/.terraform/*

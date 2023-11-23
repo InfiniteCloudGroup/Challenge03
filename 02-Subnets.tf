@@ -1,8 +1,8 @@
 # Create 3 Public Subnets
 resource "aws_subnet" "my_public_subnets" {
   count             = length(var.availability_zones)
-  vpc_id            = aws_vpc.my_vpc.id
-  cidr_block        = var.public_subnets[count.index]
+  vpc_id            = aws_vpc.icg-app.id
+  cidr_block        = cidrsubnet(aws_vpc.icg-app.cidr_block, 8, count.index + 1) 
   availability_zone = var.availability_zones[count.index]
 
   tags = {
@@ -13,8 +13,8 @@ resource "aws_subnet" "my_public_subnets" {
 #Create 3 Private Subnets
 resource "aws_subnet" "my_private_subnets" {
   count             = length(var.availability_zones)
-  vpc_id            = aws_vpc.my_vpc.id
-  cidr_block        = var.private_subnets[count.index]
+  vpc_id            = aws_vpc.icg-app.id
+  cidr_block        = cidrsubnet(aws_vpc.icg-app.cidr_block, 8, count.index + 11)  
   availability_zone = var.availability_zones[count.index]
 
   tags = {

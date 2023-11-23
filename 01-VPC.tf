@@ -1,8 +1,8 @@
 # Create a VPC
-resource "aws_vpc" "my_vpc" {
+resource "aws_vpc" "icg-app" {
   cidr_block = var.vpc_cidr
 
   tags = {
-    Name = "my_vpc"
+    Name = "icg-app"
   }
 }
