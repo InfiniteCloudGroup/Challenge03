@@ -1,7 +1,7 @@
 # Create 3 Public Subnets
 resource "aws_subnet" "my_public_subnets" {                                             #count loop through & program the subnets
   count             = length(var.availability_zones)                                    #enumerate the number of AZ's listed in var
-  vpc_id            = aws_vpc.${var.proj_name}.id
+  vpc_id            = aws_vpc.icg-app.id
   cidr_block        = cidrsubnet(aws_vpc.icg-app.cidr_block, 8, count.index + 1)        #CIDR's of Remo's line - https://bit.ly/3MS56Ne
   availability_zone = var.availability_zones[count.index]                               #MAP type VAR for the desired deployment AZ's
 

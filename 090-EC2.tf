@@ -1,4 +1,3 @@
-/*
 # Put an instance in each subnet
 resource "aws_instance" "trg" {
   count         = length(var.availability_zones)
@@ -10,4 +9,3 @@ resource "aws_instance" "trg" {
     Name = "ec2-${var.availability_zones[count.index]}"
   }
 }
-*/
