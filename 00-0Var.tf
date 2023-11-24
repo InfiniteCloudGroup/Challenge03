@@ -3,6 +3,11 @@ variable "region" {
   default = "us-east-1"
 }
 
+# Name this project
+variable "proj_name" {
+  default = "XYZ-Proj"
+}
+
 # Specify 3 availability zones from the region
 variable "availability_zones" {
   default = ["us-east-1a", "us-east-1b", "us-east-1c"]
@@ -14,7 +19,7 @@ variable "vpc_cidr" {
 }
 
 # Tags to add to every resource
-variable "resource_tags" { 
+variable "dflt_tags" { 
     type = map(string)
     default = { 
         Owner:      "Chewbaca",
